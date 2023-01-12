@@ -16,15 +16,15 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div id='root' class="container">
         <!-- Sidebar -->
         <div id="sidebar">
-            <section id="user">
+            <section id="user" class="user">
                 <div class="profile">
                     <figure>
                         <img src="img/avatar_io.jpg" alt="yourProfile">
                     </figure>
-                    <h4>Nome utente</h4>
+                    <h4>{{ user.name }}</h4>
                 </div>
                 <div class="options">
                     <i class="bi bi-clock-history icon"></i>
@@ -49,59 +49,53 @@
             </section>
             <section id="chat-list">
                 <ul>
-                    <li class="chat-element">
+                    <li v-for="contact in contacts" class="chat-element">
                         <div class="profile">
                             <figure>
-                                <img src="img/avatar_io.jpg" alt="yourProfile">
+                                <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name">
                             </figure>
-                            <h4>Nome utente</h4>
-                        </div>
-                    </li>
-                    <li class="chat-element">
-                        <div class="profile">
-                            <figure>
-                                <img src="img/avatar_io.jpg" alt="yourProfile">
-                            </figure>
-                            <h4>Nome utente</h4>
-                        </div>
-                    </li>
-                    <li class="chat-element">
-                        <div class="profile">
-                            <figure>
-                                <img src="img/avatar_io.jpg" alt="yourProfile">
-                            </figure>
-                            <h4>Nome utente</h4>
-                        </div>
-                    </li>
-                    <li class="chat-element">
-                        <div class="profile">
-                            <figure>
-                                <img src="img/avatar_io.jpg" alt="yourProfile">
-                            </figure>
-                            <h4>Nome utente</h4>
-                        </div>
-                    </li>
-                    <li class="chat-element">
-                        <div class="profile">
-                            <figure>
-                                <img src="img/avatar_io.jpg" alt="yourProfile">
-                            </figure>
-                            <h4>Nome utente</h4>
-                        </div>
-                    </li>
-                    <li class="chat-element">
-                        <div class="profile">
-                            <figure>
-                                <img src="img/avatar_io.jpg" alt="yourProfile">
-                            </figure>
-                            <h4>Nome utente</h4>
+                            <h4> {{ contact.name }} </h4>
                         </div>
                     </li>
                 </ul>
             </section>
         </div>
         <!-- Conversation -->
-        <div id="conversation"></div>
+        <div id="conversation">
+            <!-- Header -->
+            <header class="user">
+                <div class="profile">
+                    <figure>
+                        <img src="img/avatar_io.jpg" alt="yourProfile">
+                    </figure>
+                    <div>
+                        <h4>Michele</h4>
+                        <p>Ultimo accesso oggi alle...</p>
+                    </div>
+                </div>
+                <div class="options">
+                    <i class="bi bi-search icon"></i>
+                    <i class="bi bi-folder2-open icon"></i>
+                    <i class="bi bi-three-dots-vertical icon"></i>
+                </div>
+            </header>
+            <!-- Main -->
+            <main>
+                <div class="message sent">
+                    <p> Hai portato a spasso il cane? </p>
+                    <time>12/01/2023</time>      
+                </div>
+                <div class="message sent">Ricordati di dargli da mangiare </div>
+                <div class="message received">Tutto fatto</div>
+                <div class="message received">Ok</div>
+            </main>
+            <!-- Footer -->
+            <footer>
+                <i class="bi bi-emoji-smile icon"></i>
+                <input placeholder="Scrivi un messaggio">
+                <i class="bi bi-mic-fill icon"></i>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

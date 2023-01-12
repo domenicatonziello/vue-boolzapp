@@ -5,6 +5,7 @@
 }
 /* Generic */
 body{
+    font-family: sans-serif;
     background: linear-gradient( rgb(0,150,136) 20%, rgb(220,219,211) 20% 80%);
 }
 
@@ -24,6 +25,7 @@ body{
     margin: 3px;
     color: grey;
     font-size: 20px;
+    cursor: pointer;
 }
 /*** SIDEBAR ***/
 #sidebar{
@@ -33,9 +35,9 @@ body{
     background-color:  white;
     border-right: 1px solid black;
 }
-#user{
-    /* border: 1px solid black; */
+.user{
     height: 70px;
+    background-color: rgb(234,234,234);
 
     display: flex;
     justify-content: space-between;
@@ -45,6 +47,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .profile figure{
     width: 50px;
@@ -111,5 +114,49 @@ body{
     flex-basis: 65%;
 
     height: 100%;
-    background-color: blue;
+    background-image: url(img/mine.jpg);
+    /* background-color: blue; */
+}
+#conversation header p{
+    color: gray;
+}
+#conversation main{
+    height: calc(100% - 140px);
+    padding: 30px 50px;
+    overflow-y: auto; 
+}
+#conversation .message{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.message time{
+    display: block;
+    color: rgb(193,200,187);
+    font-size: 13px;
+    text-align: right;
+}
+.message.sent{
+    margin-left: 250px;
+    background-color: rgb(213,249,186);
+}
+.message.received{
+    margin-right: 250px;
+    background-color: white;
+}
+#conversation footer{
+    height: 70px;
+    background-color: rgb(243,238,234);
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#conversation input{
+    width: 85%;
+    height: 100%;
+    padding: 5px;
+    border: none;
+    font-family: sans-serif;
 }
