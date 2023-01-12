@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Generic */
+body{
+    background: linear-gradient( rgb(0,150,136) 20%, rgb(220,219,211) 20% 80%);
+}
+
+/* Utility */
+.container{
+    max-width: 1000px;
+    margin: 2rem auto;
+
+    display: flex;
+
+    height: 90vh;
+}
+.bg-white{
+    background-color: white;
+}
+.icon{
+    margin: 3px;
+    color: grey;
+    font-size: 20px;
+}
+/*** SIDEBAR ***/
+#sidebar{
+    flex-basis: 35%;
+
+    height: 100% ;
+    background-color:  white;
+    border-right: 1px solid black;
+}
+#user{
+    /* border: 1px solid black; */
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile figure{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+.profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; 
+}
+
+/* Notifiche */
+#notifications{
+    height: 70px;
+    background-color: rgb(142,218,252);
+    display: flex;
+    align-items: center;
+}
+#notifications div:first-child{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    background-color: white;
+    margin: 0 10px;
+
+}
+#notifications a{
+    color: grey;
+}
+/* Barra ricerca */
+#search{
+    background-color: rgb(250,250,250);
+    height: 40px;
+    padding: 10px;
+}
+#search input{
+    border: none;
+    width: 80%;
+}
+#search input:focus-visible{
+    outline: none;
+}
+/* Lista chat */
+#chat-list{
+    height: calc(90vh - 190px);
+    overflow-y: auto;
+}
+#chat-list ul{
+    list-style-type: none;
+}
+#chat-list .chat-element{
+    border-bottom: 1px solid rgb(242,242,242);
+}
+#chat-list .profile{
+    justify-content: left;
+}
+
+/*** CONVERSATION ***/
+#conversation{
+    flex-basis: 65%;
+
+    height: 100%;
+    background-color: blue;
+}
