@@ -93,7 +93,7 @@
             <!-- Footer -->
             <footer>
                 <i class="bi bi-emoji-smile icon"></i>
-                <input placeholder="Scrivi un messaggio">
+                <input placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addNewMessage">
                 <i class="bi bi-mic-fill icon"></i>
             </footer>
         </div>

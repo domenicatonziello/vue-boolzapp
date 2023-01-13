@@ -2,6 +2,7 @@
 const app = Vue.createApp({
     data(){
         return{
+            newMessage: '',
             currentIndex: 0,
             user: {
               name: 'Nome Utente',
@@ -102,7 +103,25 @@ const app = Vue.createApp({
     methods:{
         setCurrentIndex(index){
             this.currentIndex = index;
+        },
+        addNewMessage(){
+            if(this.newMessage){
+                this.currentMessages.push({
+                    date: '20/03/2020 16:35:00',
+                    text: this.newMessage,
+                    status: 'sent'
+                })
+                this.newMessage = ''
+                setTimeout(()=>{
+                    this.currentMessages.push({
+                        date: '20/03/2020 16:35:00',
+                        text: 'Ok!',
+                        status: 'received'
+                    })
+                },1000)
+            }
         }
+        
     }  
 });
 
