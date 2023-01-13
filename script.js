@@ -105,7 +105,7 @@ const app = Vue.createApp({
             this.currentIndex = index;
         },
         addNewMessage(){
-            if(this.newMessage){
+            if(this.newMessage.trim()){
                 this.currentMessages.push({
                     date: '20/03/2020 16:35:00',
                     text: this.newMessage,
