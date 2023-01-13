@@ -105,6 +105,9 @@ body{
 #chat-list .chat-element{
     border-bottom: 1px solid rgb(242,242,242);
 }
+#chat-list .chat-element:hover{
+    background-color: lightgray;
+}
 #chat-list .profile{
     justify-content: left;
 }
