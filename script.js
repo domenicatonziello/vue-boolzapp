@@ -47,7 +47,7 @@ const app = Vue.createApp({
                    {
                      date: '20/03/2020 16:35:00',
                      text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                     status: 'received'
+                     status: 'sent'
                    }
                   ],
                 },
@@ -95,7 +95,7 @@ const app = Vue.createApp({
         currentContact(){
             return this.contacts[this.currentIndex];
         },
-        currentMessage(){
+        currentMessages(){
             return this.currentContact.messages;
         }
     },

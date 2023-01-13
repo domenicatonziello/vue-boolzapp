@@ -66,7 +66,7 @@
             <header class="user">
                 <div class="profile">
                     <figure>
-                        <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="yourProfile">
+                        <img :src="`img/avatar${currentContact.avatar}.jpg`" :alt="currentContact.name">
                     </figure>
                     <div>
                         <h4> {{ currentContact.name }}</h4>
@@ -81,17 +81,11 @@
             </header>
             <!-- Main -->
             <main>
-                <ul v-for="(contact,i) in contacts" v-show="currentIndex === i">
-                    <li class="message-container" :class="contact.messages[0].status">
+                <ul>
+                    <li v-for="message in currentMessages" class="message-container" :class="message.status">
                         <div class="message">
-                            <p> {{ currentMessage[0].text }}</p>
-                            <time>12/01/2023</time>
-                        </div>
-                    </li>
-                    <li class="message-container received">
-                        <div class="message">
-                            <p> Tutto fatto </p>
-                            <time>12/01/2023</time>
+                            <p> {{ message.text }}</p>
+                            <time>{{ message.date}}</time>
                         </div>
                     </li>
                 </ul>
