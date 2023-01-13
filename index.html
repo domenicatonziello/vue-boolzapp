@@ -44,12 +44,12 @@
             <section id="search">
                 <div class="bg-white">
                     <i class="bi bi-search icon"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" v-model="searchChat" @keyup="changeVisible" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </section>
             <section id="chat-list">
                 <ul>
-                    <li v-for="(contact,i) in contacts" @click="setCurrentIndex(i)" class="chat-element">
+                    <li v-for="(contact,i) in contacts" v-show="contact.visible" @click="setCurrentIndex(i)" class="chat-element">
                         <div class="profile">
                             <figure>
                                 <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name">

@@ -2,6 +2,7 @@
 const app = Vue.createApp({
     data(){
         return{
+            searchChat: '',
             newMessage: '',
             currentIndex: 0,
             user: {
@@ -120,6 +121,16 @@ const app = Vue.createApp({
                     })
                 },1000)
             }
+        },
+        changeVisible(){
+            this.contacts.forEach(contact => {
+                if(!contact.name.toLowerCase().includes(this.searchChat.toLowerCase())){
+                    contact.visible = false;
+                }
+                if(!this.searchChat){
+                    contact.visible = true;
+                }
+            });
         }
         
     }  
