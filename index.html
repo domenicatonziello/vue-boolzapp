@@ -49,7 +49,7 @@
             </section>
             <section id="chat-list">
                 <ul>
-                    <li v-for="contact in contacts" class="chat-element">
+                    <li v-for="(contact,i) in contacts" @click="setCurrentIndex(i)" class="chat-element">
                         <div class="profile">
                             <figure>
                                 <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name">
@@ -66,10 +66,10 @@
             <header class="user">
                 <div class="profile">
                     <figure>
-                        <img src="img/avatar_io.jpg" alt="yourProfile">
+                        <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="yourProfile">
                     </figure>
                     <div>
-                        <h4>Michele</h4>
+                        <h4> {{ currentContact.name }}</h4>
                         <p>Ultimo accesso oggi alle...</p>
                     </div>
                 </div>
@@ -81,13 +81,20 @@
             </header>
             <!-- Main -->
             <main>
-                <div class="message sent">
-                    <p> Hai portato a spasso il cane? </p>
-                    <time>12/01/2023</time>      
-                </div>
-                <div class="message sent">Ricordati di dargli da mangiare </div>
-                <div class="message received">Tutto fatto</div>
-                <div class="message received">Ok</div>
+                <ul v-for="(contact,i) in contacts" v-show="currentIndex === i">
+                    <li class="message-container" :class="contact.messages[0].status">
+                        <div class="message">
+                            <p> {{ currentMessage[0].text }}</p>
+                            <time>12/01/2023</time>
+                        </div>
+                    </li>
+                    <li class="message-container received">
+                        <div class="message">
+                            <p> Tutto fatto </p>
+                            <time>12/01/2023</time>
+                        </div>
+                    </li>
+                </ul>
             </main>
             <!-- Footer -->
             <footer>
