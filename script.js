@@ -101,9 +101,6 @@ const app = Vue.createApp({
         },
         currentMessages(){
             return this.currentContact.messages;
-        },
-        lastIndex(){
-          return this.currentMessages.length - 1;
         }
     },
     methods:{
@@ -145,6 +142,9 @@ const app = Vue.createApp({
         },
         deleteMessage(index){
           this.currentMessages.splice(index,1)
+        },
+        getLastMessage(i){
+          this.contacts[i].messages[messages.length - 1];
         }
     }  
 });

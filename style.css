@@ -185,11 +185,11 @@ body{
     background-color: white;
 }
 
-.message time{
+ time{
     display: block;
     text-align: right;
     color: rgb(193,199,187);
-    font-size: 11px;
+    font-size: 12px;
 }
 
 

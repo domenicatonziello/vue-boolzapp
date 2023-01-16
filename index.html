@@ -59,10 +59,10 @@
                                 </figure>
                                 <div>
                                     <h4> {{ contact.name }} </h4>
-                                    <p>{{ currentMessages[lastIndex].text }}</p>
+                                    <p>{{ getLastMessage(i).text }}</p>
                                 </div>
                             </div>
-                            <time>{{ currentMessages[lastIndex].date }}</time>
+                            <time>{{ getLastMessage(i).date }}</time>
                         </div>
                     </li>
                 </ul>
