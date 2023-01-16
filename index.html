@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Boolzapp </title>
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
     <!-- Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- Style -->
@@ -93,7 +95,7 @@
             <!-- Footer -->
             <footer>
                 <i class="bi bi-emoji-smile icon"></i>
-                <input placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addNewMessage">
+                <input placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendNewMessage">
                 <i class="bi bi-mic-fill icon"></i>
             </footer>
         </div>

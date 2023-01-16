@@ -1,3 +1,5 @@
+// Luxon
+const dateTime = luxon.DateTime;
 
 const app = Vue.createApp({
     data(){
@@ -105,34 +107,39 @@ const app = Vue.createApp({
         setCurrentIndex(index){
             this.currentIndex = index;
         },
-        addNewMessage(){
+        sendNewMessage(){
             if(this.newMessage.trim()){
-                this.currentMessages.push({
-                    date: '20/03/2020 16:35:00',
-                    text: this.newMessage,
-                    status: 'sent'
-                })
+               this.addMessage('sent', this.newMessage);
                 this.newMessage = ''
-                setTimeout(()=>{
-                    this.currentMessages.push({
-                        date: '20/03/2020 16:35:00',
-                        text: 'Ok!',
-                        status: 'received'
-                    })
-                },1000)
+                this.autoreply();
             }
         },
+        addMessage(status, text){
+          const newMessage ={
+            text,
+            status,
+            date: this.getCurrentMoment()
+          };
+          this.currentMessages.push(newMessage);
+        },
+        autoreply(){
+          setTimeout (()=>{
+            this.addMessage('received','ok');
+          }, 1000)
+        },
         changeVisible(){
-            this.contacts.forEach(contact => {
-                if(!contact.name.toLowerCase().includes(this.searchChat.toLowerCase())){
-                    contact.visible = false;
-                }
-                if(!this.searchChat){
-                    contact.visible = true;
-                }
-            });
-        }
-        
+          this.contacts.forEach(contact => {
+              if(!contact.name.toLowerCase().includes(this.searchChat.toLowerCase())){
+                  contact.visible = false;
+              }
+              if(!this.searchChat){
+                  contact.visible = true;
+              }
+          });
+        },
+        getCurrentMoment(){
+          return dateTime.now().setLocale('it').toLocaleString(dateTime.DATETIME_SHORT);
+        } 
     }  
 });
 
