@@ -52,11 +52,14 @@
             <section id="chat-list">
                 <ul>
                     <li v-for="(contact,i) in contacts" v-show="contact.visible" @click="setCurrentIndex(i)" class="chat-element">
-                        <div class="profile">
-                            <figure>
-                                <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name">
-                            </figure>
-                            <h4> {{ contact.name }} </h4>
+                        <div class="chat">
+                            <div class="profile">
+                                <figure>
+                                    <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name">
+                                </figure>
+                                <h4> {{ contact.name }} </h4>
+                            </div>
+                            <time></time>
                         </div>
                     </li>
                 </ul>
@@ -84,10 +87,19 @@
             <!-- Main -->
             <main>
                 <ul>
-                    <li v-for="message in currentMessages" class="message-container" :class="message.status">
+                    <li v-for="(message,i) in currentMessages" class="message-container" :class="message.status">
                         <div class="message">
-                            <p> {{ message.text }}</p>
-                            <time>{{ message.date}}</time>
+                            <div>
+                                <p> {{ message.text }}</p>
+                                <time>{{ message.date}}</time>
+                            </div>
+                            <div class="dropdown">
+                                <i class="bi bi-chevron-down"></i>
+                                <ul class="dropdown-menu">
+                                    <li> Info messaggio </li>
+                                    <li @click="deleteMessage(i)"> Cancella messaggio</li>
+                                </ul>
+                            </div>
                         </div>
                     </li>
                 </ul>

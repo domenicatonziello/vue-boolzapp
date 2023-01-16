@@ -111,6 +111,10 @@ body{
 #chat-list .profile{
     justify-content: left;
 }
+#chat-list .chat{
+    display: flex;
+    justify-content: space-between;
+}
 
 /*** CONVERSATION ***/
 #conversation{
@@ -135,9 +139,39 @@ body{
 }
 #conversation .message{
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 15px 20px;
+    box-shadow: 2px 2px 2px gray;
+    position: relative;
 }
-
+/* DROPDOWN */
+#conversation .dropdown{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 10px ;
+    display: none;
+    text-align: right;
+}
+#conversation .message:hover .dropdown{
+    display: block;
+}
+.dropdown-menu{
+    display: none;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+    height: 80px;
+    width: 160px;
+    background-color: white;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 5px 5px 5px rgb(66, 66, 66);
+}
+.dropdown-menu li{
+    cursor: pointer;
+    padding: 10px;
+}
 .message-container.sent{
     justify-content: flex-end;
 }

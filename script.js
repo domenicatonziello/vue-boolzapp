@@ -139,7 +139,10 @@ const app = Vue.createApp({
         },
         getCurrentMoment(){
           return dateTime.now().setLocale('it').toLocaleString(dateTime.DATETIME_SHORT);
-        } 
+        },
+        deleteMessage(index){
+          this.currentMessages.splice(index,1)
+        }
     }  
 });
 
