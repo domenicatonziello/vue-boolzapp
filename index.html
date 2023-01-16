@@ -57,9 +57,12 @@
                                 <figure>
                                     <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name">
                                 </figure>
-                                <h4> {{ contact.name }} </h4>
+                                <div>
+                                    <h4> {{ contact.name }} </h4>
+                                    <p>{{ currentMessages[lastIndex].text }}</p>
+                                </div>
                             </div>
-                            <time></time>
+                            <time>{{ currentMessages[lastIndex].date }}</time>
                         </div>
                     </li>
                 </ul>
