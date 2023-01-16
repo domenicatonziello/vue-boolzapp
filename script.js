@@ -144,7 +144,7 @@ const app = Vue.createApp({
           this.currentMessages.splice(index,1)
         },
         getLastMessage(i){
-          this.contacts[i].messages[messages.length - 1];
+          return this.contacts[i].messages[this.contacts[i].messages.length - 1];
         }
     }  
 });

@@ -8,6 +8,12 @@ body{
     font-family: sans-serif;
     background: linear-gradient( rgb(0,150,136) 20%, rgb(220,219,211) 20% 80%);
 }
+time{
+    display: block;
+    text-align: right;
+    color: rgb(193,199,187);
+    font-size: 12px;
+}
 
 /* Utility */
 .container{
@@ -184,15 +190,6 @@ body{
 .message-container.received .message{
     background-color: white;
 }
-
- time{
-    display: block;
-    text-align: right;
-    color: rgb(193,199,187);
-    font-size: 12px;
-}
-
-
 #conversation footer{
     height: 70px;
     background-color: rgb(243,238,234);
